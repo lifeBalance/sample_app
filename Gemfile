@@ -49,14 +49,11 @@ group :test do
   gem 'mini_backtrace'
   gem 'guard-minitest'
 end
-  
+
 group :production do
   gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
 end
 
-
-
-
-
-
+# Adding Bootstrap
+gem 'bootstrap-sass'
