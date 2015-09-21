@@ -7,8 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      remember user # Generates a token and saves it hashed(as :remember_digest) to the DB
-      redirect_to user # Same as: redirect_to user_url(user)
+      redirect_back_or user
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
